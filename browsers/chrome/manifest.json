@@ -1,0 +1,80 @@
+{
+    "chrome_url_overrides": {
+      "newtab": "iframe.html"
+    },
+    "name": "__MSG_appName__",
+    "description": "__MSG_appDesc__",
+    "default_locale": "en",
+    "version": "2018.0.1",
+    "icons": {
+      "16": "./img/logo16.png",
+      "32": "./img/logo32.png",
+      "48": "./img/logo48.png",
+      "128": "./img/logo128.png"
+    },
+    "manifest_version": 2,
+    "browser_action": {
+      "default_icon": {
+          "16": "./img/logo16.png",
+          "32": "./img/logo32.png",
+          "48": "./img/logo48.png",
+          "128": "./img/logo128.png"
+        },
+        "default_popup": "html/popup.html"
+    },
+    "omnibox": {"keyword": "d"},
+    "options_page": "html/options.html",
+    "background": {
+            "scripts": [
+                "public/js/background.js"
+            ]
+    },
+    "chrome_settings_overrides": {
+      "homepage": "https://www.exploreos.com/?startpage=1",
+        "search_provider": {
+          "name": "ExploreOS",
+          "keyword": "exploreos.com",
+          "search_url": "https://www.exploreos.com/?q={searchTerms}",
+          "favicon_url": "https://www.exploreos.com/img/expore_Favicon.png",
+          "image_url": "https://www.exploreos.com/?q={searchTerms}&type=image",
+          "encoding": "UTF-8",
+          "is_default": true
+        }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "all_frames": true,
+        "css": ["public/css/noatb.css"],
+        "run_at": "document_start"
+      },
+      {
+        "js": [
+          "public/js/content-scripts/element-hiding.js"
+        ],
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "match_about_blank": true,
+        "all_frames": true,
+        "run_at": "document_start"
+      }
+    ],
+    "permissions": [
+        "contextMenus",
+        "webRequest",
+        "webRequestBlocking",
+        "*://*/*",
+        "webNavigation",
+        "activeTab",
+        "tabs",
+        "cookies",
+        "storage",
+        "<all_urls>",
+        "alarms"
+    ],
+    "web_accessible_resources": [
+        "img/*"
+    ]
+}

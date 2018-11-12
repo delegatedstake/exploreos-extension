@@ -1,0 +1,21 @@
+@import "vars";
+@import "mixins";
+
+
+/* Generic menu list styling */
+@include default_list();
+
+
+/* Generic toggle button styling */
+@include toggle_button();
+
+@import "views/extension-page";
+
+/* Whitelist */
+@import "views/whitelist";
+
+.options-info {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: $slate;
+}
