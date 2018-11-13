@@ -8,7 +8,7 @@
 		<key>Key</key>
 		<string>default_search_engine</string>
 		<key>Title</key>
-		<string>Make DuckDuckGo the default search engine</string>
+		<string>Make ExploreOS the default search engine</string>
 		<key>Type</key>
 		<string>CheckBox</string>
 	</dict>

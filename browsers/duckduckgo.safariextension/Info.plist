@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Author</key>
-	<string>DuckDuckGo</string>
+	<string>ExploreOS Search</string>
 	<key>Builder Version</key>
-	<string>13604.5.6</string>
+	<string>2018.01</string>
 	<key>CFBundleDisplayName</key>
-	<string>DuckDuckGo Privacy Essentials</string>
+	<string>ExploreOS Privacy Extension</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.duckduckgo.safari</string>
+	<string>com.exploreos.safari</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2018.8.16</string>
+	<string>2018.01</string>
 	<key>CFBundleVersion</key>
 	<string>53</string>
 	<key>Chrome</key>
@@ -43,13 +43,13 @@
 				<key>Image</key>
 				<string>img/ddg-icon@2x.png</string>
 				<key>Label</key>
-				<string>DuckDuckGo</string>
+				<string>ExploreOS</string>
 				<key>Palette Label</key>
-				<string>DuckDuckGo</string>
+				<string>ExploreOS</string>
 				<key>Popover</key>
 				<string>popup</string>
 				<key>Tool Tip</key>
-				<string>DuckDuckGo</string>
+				<string>ExploreOS</string>
 			</dict>
 		</array>
 	</dict>
@@ -84,8 +84,8 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>http://duckduckgo.com/extensions/duckduckgo.plist</string>
+	<string>https://www.exploreos.com/extensions/exploreos.plist</string>
 	<key>Website</key>
-	<string>http://duckduckgo.com</string>
+	<string>https://www.exploreos.com</string>
 </dict>
 </plist>
