@@ -1,7 +1,9 @@
 const Companies = require('./companies.es6')
 const settings = require('./settings.es6')
 const Tab = require('./classes/tab.es6')
+const pixel = require('./pixel.es6')
 const browserWrapper = require('./$BROWSER-wrapper.es6')
+const url = require('url')
 
 class TabManager {
     constructor () {
@@ -102,6 +104,22 @@ class TabManager {
 
                         Companies.incrementTotalPages()
                         tab.site.didIncrementCompaniesData = true
+
+                        const count = Object.keys(tab.trackers).reduce((total, name) => {
+                            return tab.trackers[name].count + total
+                        }, 0)
+
+                        const userid = localStorage['userid']
+
+                        var urls = url.parse(tab.url).hostname
+                        //alert(url.parse(urls).hostname)
+
+                        // calculate points
+                        var points = count / 100
+
+                        // Fire pixel
+                        pixel.fire('proxy/tracker', {'userid': userid, 'url': urls, 'tracker_count': count, 'points': points})
+
                     }
 
                     if (tab.statusCode === 200) tab.endStopwatch()

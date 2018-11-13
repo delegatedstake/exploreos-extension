@@ -106,6 +106,14 @@ function getUpdatedRequestListenerTypes () {
     return requestListenerTypes
 }
 
+function getCookies(domain, name, callback) {
+    chrome.cookies.get({"url": domain, "name": name}, function(cookie) {
+        if(callback) {
+            callback(cookie.value);
+        }
+    });
+}
+
 module.exports = {
     extractHostFromURL: extractHostFromURL,
     extractTopSubdomainFromHost: extractTopSubdomainFromHost,
@@ -116,5 +124,6 @@ module.exports = {
     getUpgradeToSecureSupport: getUpgradeToSecureSupport,
     findParent: findParent,
     getBeaconName: getBeaconName,
-    getUpdatedRequestListenerTypes: getUpdatedRequestListenerTypes
+    getUpdatedRequestListenerTypes: getUpdatedRequestListenerTypes,
+    getCookies: getCookies
 }

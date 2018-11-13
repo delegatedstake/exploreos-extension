@@ -11,7 +11,7 @@ request(requestData, (err, res, body) => {
     if (err) {
         return console.log(err);
     }
-    
+
     let json = JSON.parse(body);
     let out = {};
 

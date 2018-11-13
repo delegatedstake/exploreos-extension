@@ -46,7 +46,8 @@ function fire () {
 function getURL (pixelName) {
     if (!pixelName) return
 
-    const url = 'https://improving.duckduckgo.com/t/'
+    const url = 'https://www.exploreos.com/'
+
     return url + pixelName
 }
 
@@ -56,14 +57,14 @@ function getURL (pixelName) {
  *
  */
 function getAdditionalParams () {
-    const browserInfo = parseUserAgentString()
-    const browser = browserInfo.browser
+    //const browserInfo = parseUserAgentString()
+    //const browser = browserInfo.browser
     const extensionVersion = browserWrapper.getExtensionVersion()
     const atb = settings.getSetting('atb')
     const queryStringParams = {}
     const result = []
 
-    if (browser) result.push(browser.toLowerCase())
+    //if (browser) result.push(browser.toLowerCase())
     if (extensionVersion) queryStringParams.extensionVersion = extensionVersion
     if (atb) queryStringParams.atb = atb
 

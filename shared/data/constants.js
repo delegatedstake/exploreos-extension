@@ -3,14 +3,14 @@ module.exports = {
     "blockLists": [
         "trackersWithParentCompany.json"
     ],
-    "entityList": "https://duckduckgo.com/contentblocking.js?l=entitylist2",
+    "entityList": "https://www.exploreos.com/contentblocking.js?l=entitylist2",
     "entityMap": "data/tracker_lists/entityMap.json",
     "blocking": ["Advertising", "Analytics", "Social"],
     "requestListenerTypes": ["main_frame","sub_frame","stylesheet","script","image","object","xmlhttprequest","other"],
-    "trackersWhitelistTemporary": "https://duckduckgo.com/contentblocking/trackers-whitelist-temporary.txt",
-    "trackersWhitelist": "https://duckduckgo.com/contentblocking/trackers-whitelist.txt",
-    "surrogateList": "https://duckduckgo.com/contentblocking.js?l=surrogates",
-    "feedbackUrl": "https://duckduckgo.com/feedback.js?type=extension-feedback",
+    "trackersWhitelistTemporary": "https://www.exploreos.com/contentblocking/trackers-whitelist-temporary.txt",
+    "trackersWhitelist": "https://www.exploreos.com/contentblocking/trackers-whitelist.txt",
+    "surrogateList": "https://www.exploreos.com/contentblocking.js?l=surrogates",
+    "feedbackUrl": "https://www.exploreos.com/feedback.js?type=extension-feedback",
     "tosdrMessages" : {
         "A": "Good",
         "B": "Mixed",
