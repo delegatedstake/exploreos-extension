@@ -3,7 +3,7 @@ var request = require('request'),
 
 let requestData = {
     method: 'get',
-    uri: 'https://duckduckgo.com/contentblocking.js?l=entitylist2',
+    uri: 'https://s3.us-east-2.amazonaws.com/searchcdn/contentblocking.js',
     gzip: true
 }
 

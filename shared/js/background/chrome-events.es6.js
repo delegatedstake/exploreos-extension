@@ -13,9 +13,12 @@ chrome.runtime.onInstalled.addListener(function (details) {
             .then(ATB.openPostInstallPage)
     }
 
-    utils.getCookies("https://www.exploreos.com", "exploreos_user_stats", function(exploreos_user_stats) {
-      var obj = JSON.parse(decodeURIComponent(exploreos_user_stats))
-      localStorage['userid'] = obj.cookie_name
+    utils.setCookies("https://www.exploreos.com", "exploreos_user_stats", function(cookie) {
+      if (cookie) {
+          var obj = JSON.parse(decodeURIComponent(cookie))
+          localStorage['userid'] = obj.cookie_name
+          return console.log('Cookie set');
+      }
     });
 })
 

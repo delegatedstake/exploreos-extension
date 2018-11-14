@@ -26,7 +26,7 @@ module.exports = function () {
     }
 
     return bel`<form class='frm'>
-        <p>Anonymously share some feedback to help us improve DuckDuckGo Privacy Essentials.</p>
+        <p>Anonymously share some feedback to help us improve ExploreOS Search.</p>
         <label class='frm__label'>
             <input type='checkbox' class='js-feedback-broken-site frm__label__chk'
                 ${this.model.isBrokenSite ? 'checked' : ''}/>

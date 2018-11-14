@@ -40,7 +40,7 @@ const setup = async (ops) => {
     for (const t of targets) {
         const title = t._targetInfo.title
 
-        if (title === 'DuckDuckGo Privacy Essentials') {
+        if (title === 'ExploreOS Search') {
             bgPage = await t.page()
             break
         }

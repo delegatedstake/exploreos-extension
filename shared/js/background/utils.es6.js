@@ -106,12 +106,31 @@ function getUpdatedRequestListenerTypes () {
     return requestListenerTypes
 }
 
-function getCookies(domain, name, callback) {
+function setCookies(domain, name, callback) {
     chrome.cookies.get({"url": domain, "name": name}, function(cookie) {
+      if(cookie){
         if(callback) {
             callback(cookie.value);
         }
+      }else{
+        var rand = getRndInteger(0,999999999)
+
+        var value = {};
+        value['cookie_name'] = Date.now() + '_' + rand
+        value['created'] = Date.now()
+        value['points'] = 0
+
+        chrome.cookies.set({"url": domain, "name": name, "value": JSON.stringify(value), expirationDate: (new Date().getTime()/1000) * 1000}, function(cookie) {
+          if(callback) {
+            callback(cookie.value);
+          }
+        });
+      }
     });
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
 }
 
 module.exports = {
@@ -125,5 +144,5 @@ module.exports = {
     findParent: findParent,
     getBeaconName: getBeaconName,
     getUpdatedRequestListenerTypes: getUpdatedRequestListenerTypes,
-    getCookies: getCookies
+    setCookies: setCookies
 }

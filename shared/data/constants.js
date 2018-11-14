@@ -3,13 +3,13 @@ module.exports = {
     "blockLists": [
         "trackersWithParentCompany.json"
     ],
-    "entityList": "https://www.exploreos.com/contentblocking.js?l=entitylist2",
+    "entityList": "https://s3.us-east-2.amazonaws.com/searchcdn/contentblocking.js",
     "entityMap": "data/tracker_lists/entityMap.json",
     "blocking": ["Advertising", "Analytics", "Social"],
     "requestListenerTypes": ["main_frame","sub_frame","stylesheet","script","image","object","xmlhttprequest","other"],
-    "trackersWhitelistTemporary": "https://www.exploreos.com/contentblocking/trackers-whitelist-temporary.txt",
-    "trackersWhitelist": "https://www.exploreos.com/contentblocking/trackers-whitelist.txt",
-    "surrogateList": "https://www.exploreos.com/contentblocking.js?l=surrogates",
+    "trackersWhitelistTemporary": "https://s3.us-east-2.amazonaws.com/searchcdn/trackers-whitelist-temporary.txt",
+    "trackersWhitelist": "https://s3.us-east-2.amazonaws.com/searchcdn/trackers-whitelist.txt",
+    "surrogateList": "https://s3.us-east-2.amazonaws.com/searchcdn/surrogates.js",
     "feedbackUrl": "https://www.exploreos.com/feedback.js?type=extension-feedback",
     "tosdrMessages" : {
         "A": "Good",
@@ -49,12 +49,12 @@ module.exports = {
         {
             "type": "upgrade list",
             "name": "httpsUpgradeList",
-            "url": "https://staticcdn.duckduckgo.com/https/https-bloom.json"
+            "url": "https://s3.us-east-2.amazonaws.com/searchcdn/https-bloom.json"
         },
         {
             "type": "whitelist",
             "name": "httpsWhitelist",
-            "url": "https://staticcdn.duckduckgo.com/https/https-whitelist.json"
+            "url": "https://s3.us-east-2.amazonaws.com/searchcdn/https-whitelist.json"
         }
     ],
     "httpsErrorCodes": {

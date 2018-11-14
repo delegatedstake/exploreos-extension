@@ -56,7 +56,7 @@ class Tab {
 
     resetBadgeIcon () {
         // set the new tab icon to the dax logo
-        browserWrapper.setBadgeIcon({path: 'img/icon_48.png', tabId: this.id})
+        browserWrapper.setBadgeIcon({path: 'img/logo48.png', tabId: this.id})
     }
 
     updateBadgeIcon (target) {
