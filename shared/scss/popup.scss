@@ -129,8 +129,8 @@ body {
        }
 
        .site-info__whitelist-status.is-transparent {
-           margin-top: -16px;           
-           
+           margin-top: -16px;
+
            .icon.icon__check,
            .icon.icon__shield,
            .text-line-after-icon {
@@ -211,7 +211,7 @@ body {
         .site-info__https-status__icon {
             @include icon_display();
             @include site_status_icons();
-            width: 15px;
+            width: 20px;
             left: 24px;
 
             &.is-secure, // default = secure, https
@@ -279,7 +279,7 @@ body {
             @include icon_display();
             @include site_status_icons();
             left: 23px;
-            
+
             &.is-good {
                 @include cross_platform_bg_image("privacy--good.svg");
             }
@@ -295,7 +295,7 @@ body {
         }
 
         .site-info__li--manage-whitelist {
-            background-color: $white; 
+            background-color: $white;
 
             .is-disabled & {
                 @include is_disabled();

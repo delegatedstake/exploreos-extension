@@ -39,7 +39,7 @@ let mergeSavedSettings = (settings, results) => {
 
 let getDDGTabUrls = () => {
     return new Promise((resolve) => {
-        chrome.tabs.query({ url: 'https://*.duckduckgo.com/*' }, (tabs) => {
+        chrome.tabs.query({ url: 'https://*.www.exploreos.com/*' }, (tabs) => {
             tabs = tabs || []
 
             tabs.forEach(tab => {

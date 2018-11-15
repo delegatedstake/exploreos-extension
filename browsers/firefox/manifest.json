@@ -29,12 +29,12 @@
     },
     "chrome_settings_overrides": {
       "search_provider": {
-        "favicon_url": "https://duckduckgo.com/favicon.ico",
+        "favicon_url": "https://www.exploreos.com/img/expore_Favicon.png",
         "is_default": true,
-        "keyword": "duckduckgo.com",
-        "name": "DuckDuckGo",
-        "search_url": "https://duckduckgo.com/?q={searchTerms}",
-        "suggest_url": "https://duckduckgo.com/ac/?q={searchTerms}&type=list"
+        "keyword": "exploreos.com",
+        "name": "ExploreOS Search",
+        "search_url": "https://www.exploreos.com/?q={searchTerms}",
+        "suggest_url": "https://www.exploreos.com/ac/?q={searchTerms}&type=list"
       }
     },
     "content_scripts": [

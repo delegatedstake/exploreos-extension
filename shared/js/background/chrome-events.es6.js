@@ -50,7 +50,7 @@ chrome.webRequest.onHeadersReceived.addListener(
             tabManager.updateTabUrl(request)
         }
 
-        if (/^https?:\/\/(.*?\.)?duckduckgo.com\/\?/.test(request.url)) {
+        if (/^https?:\/\/(.*?\.)?exploreos.com\/\?/.test(request.url)) {
             // returns a promise
             return ATB.updateSetAtb(request)
         }

@@ -28,7 +28,7 @@ let onStartup = () => {
 
     // show post install page
     let showPostInstallPage = false
-    let postInstallRegex = /duckduckgo.com\/\?t=|safari-extensions.apple.com\/details\/\?id=com.duckduckgo.safari/
+    let postInstallRegex = /exploreos.com\/\?t=|safari-extensions.apple.com\/details\/\?id=com.exploreos.safari/
 
     safari.application.browserWindows.forEach((safariWindow) => {
         safariWindow.tabs.forEach((safariTab) => {
@@ -56,7 +56,7 @@ let onStartup = () => {
             // we'll open the post install page in a new tab but keep the current tab active. To do this
             // we need to open a tab then reset the active tab
             let activeTabIdx = _getSafariTabIndex(safari.application.activeBrowserWindow.activeTab)
-            let postInstallURL = 'https://duckduckgo.com/app?post=1'
+            let postInstallURL = 'https://www.exploreos.com/app?post=1'
             // show atb in postinstall page
             const atb = settings.getSetting('atb')
             postInstallURL += atb ? `&atb=${atb}` : ''
@@ -296,7 +296,7 @@ var onBeforeSearch = function (evt) {
     if (!safari.extension.settings.default_search_engine) return
 
     let query = evt.query
-    let DDG_URL = 'https://duckduckgo.com/?q='
+    let DDG_URL = 'https://www.exploreos.com/?q='
 
     function checkURL (url) {
         var expr = /^(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/i

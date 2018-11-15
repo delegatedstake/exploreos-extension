@@ -15,8 +15,8 @@ let dev = false
 const ATB = (() => {
     // regex to match ddg urls to add atb params to.
     // Matching subdomains, searches, and newsletter page
-    const regExpAboutPage = /^https?:\/\/(\w+\.)?duckduckgo\.com\/(\?.*|about#newsletter)/
-    const ddgAtbURL = 'https://duckduckgo.com/atb.js?'
+    const regExpAboutPage = /^https?:\/\/(\w+\.)?exploreos.com\.com\/(\?.*|about#newsletter)/
+    const ddgAtbURL = 'https://exploreos.com/atb.js'
 
     return {
         updateSetAtb: () => {
@@ -35,7 +35,7 @@ const ATB = (() => {
             }
 
             let randomValue = Math.ceil(Math.random() * 1e7)
-            let url = `${ddgAtbURL}${randomValue}&atb=${atbSetting}&set_atb=${setAtbSetting}${errorParam}`
+            let url = `${ddgAtbURL}?atb=${atbSetting}&set_atb=${setAtbSetting}${errorParam}`
 
             return load.JSONfromExternalFile(url).then((res) => {
                 settings.updateSetting('set_atb', res.data.version)
@@ -80,9 +80,8 @@ const ATB = (() => {
         setInitialVersions: (numTries) => {
             numTries = numTries || 0
             if (settings.getSetting('atb') || numTries > 5) return Promise.resolve()
-
-            let randomValue = Math.ceil(Math.random() * 1e7)
-            let url = ddgAtbURL + randomValue
+            
+            let url = ddgAtbURL
 
             return load.JSONfromExternalFile(url).then((res) => {
                 settings.updateSetting('atb', res.data.version)
@@ -108,7 +107,7 @@ const ATB = (() => {
             settings.updateSetting('set_atb', atb)
 
             // just a GET request, we only care that the request was made
-            load.url(`https://duckduckgo.com/exti/?atb=${atb}`)
+            load.url(`https://www.exploreos.com/exti/?atb=${atb}`)
         },
 
         getNewATBFromURL: (url) => {
@@ -164,8 +163,8 @@ const ATB = (() => {
         },
 
         canShowPostInstall: (domain) => {
-            const regExpPostInstall = /duckduckgo\.com\/app/
-            const regExpSoftwarePage = /duckduckgo\.com\/software/
+            const regExpPostInstall = /exploreos\.com\/app/
+            const regExpSoftwarePage = /exploreos\.com\/software/
 
             if (!(domain && settings)) return false
 
@@ -175,7 +174,7 @@ const ATB = (() => {
         },
 
         getSurveyURL: () => {
-            let url = ddgAtbURL + Math.ceil(Math.random() * 1e7) + '&uninstall=1&action=survey'
+            let url = ddgAtbURL + 'uninstall/?i=1'
             let atb = settings.getSetting('atb')
             let setAtb = settings.getSetting('set_atb')
             if (atb) url += `&atb=${atb}`
