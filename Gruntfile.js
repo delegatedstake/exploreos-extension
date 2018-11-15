@@ -114,7 +114,7 @@ module.exports = function(grunt) {
                     [(file) => {
                         return through( function(buf, enc, next) {
                             let requireName = browser
-                            if(browser === 'duckduckgo.safariextension') {
+                            if(browser === 'exploreos.safariextension') {
                                 requireName = 'safari'
                             }
                             else if (browser === 'firefox') {
@@ -163,8 +163,8 @@ module.exports = function(grunt) {
         // used by watch to copy shared/js to build dir
         exec: {
             copyjs: `cp shared/js/*.js build/${browser}/${buildType}/js/ && rm build/${browser}/${buildType}/js/*.es6.js`,
-            tmpSafari: `mv build/${browser}/${buildType} build/${browser}/tmp && mkdir -p build/${browser}/${buildType}/`, 
-            mvSafari: `mv build/${browser}/tmp build/${browser}/${buildType}/ && mv build/${browser}/${buildType}/tmp build/${browser}/${buildType}/${browser}`, 
+            tmpSafari: `mv build/${browser}/${buildType} build/${browser}/tmp && mkdir -p build/${browser}/${buildType}/`,
+            mvSafari: `mv build/${browser}/tmp build/${browser}/${buildType}/ && mv build/${browser}/${buildType}/tmp build/${browser}/${buildType}/${browser}`,
             mvWatchSafari: `rsync -ar build/${browser}/${buildType}/public build/${browser}/${buildType}/${browser}/ && rm -rf build/${browser}/${buildType}/public`
         },
 
@@ -174,7 +174,7 @@ module.exports = function(grunt) {
                 tasks: ['sass']
             },
             ui: {
-                files: watch.ui, 
+                files: watch.ui,
                 tasks: ['browserify:ui', 'watchSafari']
 
             },
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
     // sets up safari directory structure so that it can be loaded in extension builder
     // duckduckgo.safariextension -> build type -> duckduckgo.safariextension -> build files
     grunt.registerTask('safari', 'Move Safari build', (() => {
-        if (browser === 'duckduckgo.safariextension') {
+        if (browser === 'exploreos.safariextension') {
             console.log("Moving Safari build")
             grunt.task.run('exec:tmpSafari')
             grunt.task.run('exec:mvSafari')
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 
     // moves generated files from watch into the correct build directory
     grunt.registerTask('watchSafari', 'Moves Safari files after watch', (() => {
-        if (browser === 'duckduckgo.safariextension') {
+        if (browser === 'exploreos.safariextension') {
             grunt.task.run('exec:mvWatchSafari')
         }
     }))
