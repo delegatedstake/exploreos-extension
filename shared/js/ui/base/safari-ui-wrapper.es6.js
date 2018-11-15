@@ -108,7 +108,7 @@ let search = (url) => {
     // in Chrome, adding the ATB param is handled by ATB.redirectURL()
     // which doesn't happen on Safari
     fetch({ getSetting: { name: 'atb' } }).then((atb) => {
-        safari.application.activeBrowserWindow.openTab().url = `https://duckduckgo.com/?q=${url}&bext=safari&atb=${atb}`
+        safari.application.activeBrowserWindow.openTab().url = `https://www.exploreos.com/?q=${url}&bext=safari&atb=${atb}`
         safari.self.hide()
     })
 }

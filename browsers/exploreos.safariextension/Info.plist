@@ -41,7 +41,7 @@
 				<key>Identifier</key>
 				<string>popup_button</string>
 				<key>Image</key>
-				<string>img/ddg-icon@2x.png</string>
+				<string>img/explore-icon@2x.png</string>
 				<key>Label</key>
 				<string>ExploreOS</string>
 				<key>Palette Label</key>

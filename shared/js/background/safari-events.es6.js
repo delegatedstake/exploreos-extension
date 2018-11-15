@@ -218,7 +218,7 @@ let onActivate = (e) => {
         // this can happen when you open a new tab, click to activate another existing tab,
         // and then go back to the new tab. new tab -> existing tab -> back to new tab.
         // reset the badge to default and reload the popup to get the correct new tab data
-        browserWrapper.setBadgeIcon({path: 'img/ddg-icon@2x.png', target: e.target})
+        browserWrapper.setBadgeIcon({path: 'img/explore-icon@2x.png', target: e.target})
         safari.extension.popovers[0].contentWindow.location.reload()
     }
 }
@@ -260,7 +260,7 @@ let onNavigate = (e) => {
         }
     }
 
-    var urlMatch = e.target.url.match(/https?:\/\/duckduckgo.com\/\?*/)
+    var urlMatch = e.target.url.match(/https?:\/\/exploreos.com\/\?*/)
 
     if (urlMatch && urlMatch[0]) {
         ATB.updateSetAtb()
@@ -274,7 +274,7 @@ let onNavigate = (e) => {
 var onBeforeNavigation = function (e) {
     // console.log(`onBeforeNavigation ${e.url} ${e.target.url}`)
 
-    if (!e.url || !e.target || e.target.url === 'about:blank' || e.url.match(/com.duckduckgo.safari/)) return
+    if (!e.url || !e.target || e.target.url === 'about:blank' || e.url.match(/com.exploreos.safari/)) return
 
     const url = e.url
     const tabId = browserWrapper.getTabId(e)

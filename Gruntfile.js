@@ -196,7 +196,7 @@ module.exports = function(grunt) {
     })
 
     // sets up safari directory structure so that it can be loaded in extension builder
-    // duckduckgo.safariextension -> build type -> duckduckgo.safariextension -> build files
+    // exploreos.safariextension -> build type -> exploreos.safariextension -> build files
     grunt.registerTask('safari', 'Move Safari build', (() => {
         if (browser === 'exploreos.safariextension') {
             console.log("Moving Safari build")
