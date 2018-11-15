@@ -245,7 +245,7 @@ let onNavigate = (e) => {
         if (!e.target.ddgCache) e.target.ddgCache = {}
         e.target.ddgCache[tab.url] = tab
     } else {
-        browserWrapper.setBadgeIcon('img/ddg-icon.png', e.target)
+        browserWrapper.setBadgeIcon('img/explore-icon.png', e.target)
 
         // if we don't have a tab with this tabId then we are in a cached page
         // use the target url to find the correct cached tab obj
@@ -289,7 +289,7 @@ var onBeforeNavigation = function (e) {
         console.log('onBeforeNavigation DELETED TAB because url did not match')
     }
 
-    browserWrapper.setBadgeIcon({path: 'img/ddg-icon@2x.png', target: e.target})
+    browserWrapper.setBadgeIcon({path: 'img/explore-icon@2x.png', target: e.target})
 }
 
 var onBeforeSearch = function (evt) {
