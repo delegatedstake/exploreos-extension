@@ -80,7 +80,7 @@ const ATB = (() => {
         setInitialVersions: (numTries) => {
             numTries = numTries || 0
             if (settings.getSetting('atb') || numTries > 5) return Promise.resolve()
-            
+
             let url = ddgAtbURL
 
             return load.JSONfromExternalFile(url).then((res) => {
@@ -174,7 +174,7 @@ const ATB = (() => {
         },
 
         getSurveyURL: () => {
-            let url = ddgAtbURL + 'uninstall/?i=1'
+            let url = ddgAtbURL + '/?i=1'
             let atb = settings.getSetting('atb')
             let setAtb = settings.getSetting('set_atb')
             if (atb) url += `&atb=${atb}`

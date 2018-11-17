@@ -13,7 +13,7 @@ const ONEDAY = 1000 * 60 * 60 * 24
 
 let lists = {
     whitelists: {
-        // source: https://github.com/duckduckgo/content-blocking-whitelist/blob/master/trackers-whitelist.txt
+
         trackersWhitelist: {
             constantsName: 'trackersWhitelist',
             parser: abp,
@@ -62,11 +62,11 @@ function updateLists () {
             let etag = settings.getSetting(constantsName + '-etag') || ''
 
             // only add url params to contentblocking.js duckduckgo urls
-            if (url.match(/^https?:\/\/(.+)?duckduckgo.com\/contentblocking\.js/)) {
+            /*if (url.match(/^https?:\/\/(.+)?duckduckgo.com\/contentblocking\.js/)) {
                 if (atb) url += '&atb=' + atb
                 if (setAtb) url += '&set_atb=' + setAtb
                 if (versionParam) url += versionParam
-            }
+            }*/
 
             console.log('Checking for list update: ', name)
 
@@ -96,7 +96,7 @@ function updateLists () {
     if (!trackersWhitelistTemporary || !trackersWhitelistTemporaryEtag) trackersWhitelistTemporaryEtag = ''
 
     // load broken site list
-    // source: https://github.com/duckduckgo/content-blocking-whitelist/blob/master/trackers-whitelist-temporary.txt
+  
     load.loadExtensionFile({url: constants.trackersWhitelistTemporary, etag: trackersWhitelistTemporaryEtag, source: 'external'}).then((response) => {
         if (response && response.status === 200) {
             const listData = response.data

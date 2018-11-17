@@ -1,10 +1,8 @@
-# DuckDuckGo Browser Extensions
+# ExploreOS Search Browser Extensions
 
-[![Build Status](https://travis-ci.org/duckduckgo/duckduckgo-privacy-extension.svg?branch=develop)](https://travis-ci.org/duckduckgo/duckduckgo-privacy-extension)
+ExploreOS Search Firefox, Chrome, and Safari extensions
 
-DuckDuckGo Firefox, Chrome, and Safari extensions
-
-This software is licensed under the terms of the Apache License, Version 2.0 (see LICENSE). Copyright (c) 2012 - 2017 [duckduckgo.com](https://duckduckgo.com)
+This software is licensed under the terms of the Apache License, Version 2.0 (see LICENSE). Copyright (c) 2012 - 2017 [exploreos.com](https://exploreos.com)
 
 ## Pre-Requisites
 - [Node.js](https://nodejs.org) installation
@@ -27,23 +25,23 @@ This software is licensed under the terms of the Apache License, Version 2.0 (se
 - Safari:
 `npm run dev-safari`
 
-Load the extension in Safari from the `build/duckduckgo.safariextension/dev/duckduckgo.safariextension` directory using the [extension builder](https://developer.apple.com/library/content/documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html)
+Load the extension in Safari from the `build/exploreos.safariextension/dev/exploreos.safariextension` directory using the [extension builder](https://developer.apple.com/library/content/documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html)
 
 
 ## Development flow
-Shared JS, CSS, and images are located in the `shared` directory. 
+Shared JS, CSS, and images are located in the `shared` directory.
 
 Popup: `shared/js/ui`
-Background: `shared/js/` 
+Background: `shared/js/`
 
 Browser specific files, including manifest files, are located in `browsers/<browser-name>`
 
 Run the dev build task for your browser from the 'Build' section above. The build files are located in `/build/<browser>/dev`. Point your browser to this location to load the extension:
 
-After running the build task it will continue watching for changes to any of the source files. After saving any changes to these files it will automatically rebuild the `dev` directory for you. 
+After running the build task it will continue watching for changes to any of the source files. After saving any changes to these files it will automatically rebuild the `dev` directory for you.
 
 ## Testing
-- Unit tests can be run from the dev version of the extension by going to 
+- Unit tests can be run from the dev version of the extension by going to
 Firefox: `moz-extension://<yourExtensionID/test/index.html`
 Chrome: `chrome-extension://<yourExtensionID/test/index/html`
 
@@ -65,8 +63,6 @@ An easy way to find your extension ID is to go to the `settings` page for the ex
 
 **Using XVFB** To test on a remote server with XVBF installed, add `-x` flag: `./selenium-test/ratings.js -x -u https://website.com`
 
-## Extension Development and Release Plan
-** Please make an [issue](https://github.com/duckduckgo/duckduckgo-privacy-extension/issues/new) before working on any new features or bug fixes.**
 
 ## Development
 - New features and bug fixes should be made against the `develop` branch
@@ -92,9 +88,9 @@ An easy way to find your extension ID is to go to the `settings` page for the ex
 - `web-ext sign --api-key=$JWT_ISSUER --api-secret=$JWT_SECRET`
 
 ### Safari
-- Update the version numbers in `browsers/duckduckgo.safariextension/Info.plist`. You need to update both `CFBundleVersion` and `CFBundleShortVersionString`.
-- Build a release version. Follow the same build steps from the build section above. Use `npm run dev-safari`. 
+- Update the version numbers in `browsers/exploreos.safariextension/Info.plist`. You need to update both `CFBundleVersion` and `CFBundleShortVersionString`.
+- Build a release version. Follow the same build steps from the build section above. Use `npm run dev-safari`.
 - Test locally
-- Before building a package with Safari extension builder you need to clear your company stats and localStorage otherwise your data will be packaged in the release version. 
+- Before building a package with Safari extension builder you need to clear your company stats and localStorage otherwise your data will be packaged in the release version.
 In the extension console run `localStorage.clear()` and `Companies.resetData()`.
 - Build a package through the extension builder.
